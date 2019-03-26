@@ -1,9 +1,16 @@
-package de.dhbw.studium.log;
+package de.dhbw.studium.ui;
 
 import de.dhbw.studium.listeners.ui.*;
+import de.dhbw.studium.log.ILog;
 import de.dhbw.studium.websocket.SocketIO;
 
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -27,6 +34,7 @@ public class MainForm implements ILog {
         textField2.addActionListener(new Mystery2Listener(this, textField2, tabbedPane1));
         resetButton.addActionListener(new ResetListener(textField1, textField2, tabbedPane1, this, logArea));
         tabbedPane1.addChangeListener(new NavigationListener(tabbedPane1, textField1, textField2));
+        ex2description.addMouseListener(new ClickDescription2Listener());
     }
 
     public void setSocketInstance(SocketIO socketInstance) {
@@ -49,9 +57,15 @@ public class MainForm implements ILog {
         }
     }
 
+    @Override
     public void log(String str) {
         SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
         String dateString = format.format(new Date());
         logArea.append("[" + dateString + "] " + str + " \n");
+    }
+
+    @Override
+    public void error(String errorMessage) {
+        JOptionPane.showMessageDialog(tabbedPane1.getSelectedComponent(), errorMessage, "ERROR", JOptionPane.ERROR_MESSAGE);
     }
 }

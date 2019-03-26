@@ -25,6 +25,8 @@ public class Mystery1Listener implements ActionListener {
         if(textField1.getText().equals("1234567890")){
             NavigatorHelper.navigate(tabbedPane1);
             logger.log("Unlocked mystery 2");
+        } else{
+            logger.error("Incorrect");
         }
     }
 

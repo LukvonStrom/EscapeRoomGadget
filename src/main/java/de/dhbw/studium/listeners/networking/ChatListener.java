@@ -5,17 +5,22 @@ import com.corundumstudio.socketio.SocketIOClient;
 import com.corundumstudio.socketio.listener.DataListener;
 import de.dhbw.studium.log.ILog;
 import de.dhbw.studium.websocket.objects.ChatObject;
+import org.apache.commons.lang3.RandomStringUtils;
 
-public class ChatListener implements DataListener<ChatObject> {
+public class ChatListener implements DataListener<String> {
     ILog logger;
+    public static String secret;
 
     public ChatListener(ILog logger) {
         this.logger = logger;
     }
 
     @Override
-    public void onData(SocketIOClient socketIOClient, ChatObject s, AckRequest ackRequest) throws Exception {
-        this.logger.log("Received Chat: " + s);
-        socketIOClient.sendEvent("chat", s + ": HI there");
+    public void onData(SocketIOClient socketIOClient, String str, AckRequest ackRequest) throws Exception {
+        this.logger.log("Received Chat: " + str);
+        ChatObject s = new ChatObject(socketIOClient.getSessionId().toString(), str, RandomStringUtils.randomAlphanumeric(10));
+        ChatListener.secret = s.getSalted();
+        socketIOClient.sendEvent("chat", ChatListener.secret);
+
     }
 }

@@ -26,7 +26,7 @@ public class SocketIO {
 
             server = new SocketIOServer(config);
 
-            server.addEventListener("chat", ChatObject.class, new ChatListener(this.logger));
+            server.addEventListener("chat", String.class, new ChatListener(this.logger));
             server.addConnectListener(new ConnectListener(this.logger));
             server.addPingListener(new PingListener(this.logger));
 

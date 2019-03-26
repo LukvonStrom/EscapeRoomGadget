@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="de.dhbw.studium.log.MainForm">
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="de.dhbw.studium.ui.MainForm">
   <grid id="27dc6" binding="panel1" default-binding="true" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="true" same-size-vertically="true" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
@@ -171,7 +171,9 @@
                     <preferred-size width="150" height="-1"/>
                   </grid>
                 </constraints>
-                <properties/>
+                <properties>
+                  <text value=""/>
+                </properties>
               </component>
               <vspacer id="b69f0">
                 <constraints>
@@ -186,7 +188,8 @@
                 </constraints>
                 <properties>
                   <editable value="false"/>
-                  <text value="Websocket Ping Event"/>
+                  <lineWrap value="true"/>
+                  <text value="Websocket Chat Event, es empfiehlt sich &#10;&#10;http://amritb.github.io/socketio-client-tool/&#10;&#10;(Klick mich =) )&#10;&#10;Websocket Server läuft auf Port (1136,5*8)"/>
                 </properties>
               </component>
             </children>
