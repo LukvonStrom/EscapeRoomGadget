@@ -8,8 +8,8 @@ import de.dhbw.studium.websocket.objects.ChatObject;
 import org.apache.commons.lang3.RandomStringUtils;
 
 public class ChatListener implements DataListener<String> {
-    ILog logger;
     public static String secret;
+    ILog logger;
 
     public ChatListener(ILog logger) {
         this.logger = logger;

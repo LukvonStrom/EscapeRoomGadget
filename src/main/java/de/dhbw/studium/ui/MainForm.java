@@ -5,12 +5,6 @@ import de.dhbw.studium.log.ILog;
 import de.dhbw.studium.websocket.SocketIO;
 
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -51,7 +45,7 @@ public class MainForm implements ILog {
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.pack();
             frame.setVisible(true);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Error while initializing");
             e.printStackTrace();
         }

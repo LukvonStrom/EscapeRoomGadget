@@ -6,13 +6,11 @@ import de.dhbw.studium.listeners.networking.ChatListener;
 import de.dhbw.studium.listeners.networking.ConnectListener;
 import de.dhbw.studium.listeners.networking.PingListener;
 import de.dhbw.studium.log.ILog;
-import de.dhbw.studium.websocket.objects.ChatObject;
 
 public class SocketIO {
+    public boolean isRunning;
     private SocketIOServer server;
     private ILog logger;
-
-    public boolean isRunning;
 
 
     public SocketIO(ILog logger) {
@@ -20,18 +18,18 @@ public class SocketIO {
     }
 
     public void init() {
-            Configuration config = new Configuration();
-            config.setHostname("localhost");
-            config.setPort(9092);
+        Configuration config = new Configuration();
+        config.setHostname("localhost");
+        config.setPort(9092);
 
-            server = new SocketIOServer(config);
+        server = new SocketIOServer(config);
 
-            server.addEventListener("chat", String.class, new ChatListener(this.logger));
-            server.addConnectListener(new ConnectListener(this.logger));
-            server.addPingListener(new PingListener(this.logger));
+        server.addEventListener("chat", String.class, new ChatListener(this.logger));
+        server.addConnectListener(new ConnectListener(this.logger));
+        server.addPingListener(new PingListener(this.logger));
 
 
-            start();
+        start();
     }
 
     public void start() {
@@ -41,7 +39,7 @@ public class SocketIO {
         isRunning = true;
     }
 
-    public void stop(){
+    public void stop() {
         server.stop();
         this.logger.log("Socket.IO Server gestoppt.");
         isRunning = false;

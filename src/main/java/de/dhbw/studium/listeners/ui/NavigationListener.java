@@ -18,7 +18,7 @@ public class NavigationListener implements ChangeListener {
 
     public void stateChanged(ChangeEvent e) {
         int index = tabbedPane1.getSelectedIndex();
-        switch(index){
+        switch (index) {
             case 2:
                 EventQueue.invokeLater(new Runnable() {
                     public void run() {

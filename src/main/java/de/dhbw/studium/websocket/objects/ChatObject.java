@@ -11,7 +11,7 @@ public class ChatObject {
         this.salt = salt;
     }
 
-    public String getSalted(){
+    public String getSalted() {
         return this.message + this.userName + "#ö#" + this.salt + "#ä#" + this.message + ".1";
     }
 }

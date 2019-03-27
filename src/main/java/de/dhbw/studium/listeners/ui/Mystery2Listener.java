@@ -21,15 +21,15 @@ public class Mystery2Listener implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         System.out.println("Mistery 2 Listener fired!");
-        if(ChatListener.secret == null || ChatListener.secret.isEmpty()){
+        if (ChatListener.secret == null || ChatListener.secret.isEmpty()) {
             logger.error("Socket Message not received yet, therefore no secret was computed.");
             return;
         }
         logger.log("Tried mystery 2 with answer: " + textField.getText());
-        if(textField.getText().equals(ChatListener.secret)){
+        if (textField.getText().equals(ChatListener.secret)) {
             NavigatorHelper.navigate(tabbedPane);
             logger.log("Unlocked mystery 3");
-        }else{
+        } else {
             logger.error("INCORRECT");
         }
     }
