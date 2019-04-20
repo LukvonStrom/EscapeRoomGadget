@@ -1,5 +1,6 @@
 package de.dhbw.studium.listeners.ui;
 
+import com.corundumstudio.socketio.SocketIOServer;
 import de.dhbw.studium.listeners.NavigatorHelper;
 import de.dhbw.studium.listeners.networking.ChatListener;
 import de.dhbw.studium.log.ILog;
@@ -12,11 +13,13 @@ public class Mystery2Listener implements ActionListener {
     ILog logger;
     JTextField textField;
     JTabbedPane tabbedPane;
+    SocketIOServer socketInstance;
 
-    public Mystery2Listener(ILog logger, JTextField textField, JTabbedPane tabbedPane) {
+    public Mystery2Listener(ILog logger, JTextField textField, JTabbedPane tabbedPane, SocketIOServer socketInstance) {
         this.logger = logger;
         this.textField = textField;
         this.tabbedPane = tabbedPane;
+        this.socketInstance = socketInstance;
     }
 
     public void actionPerformed(ActionEvent e) {
@@ -29,6 +32,7 @@ public class Mystery2Listener implements ActionListener {
         if (textField.getText().equals(ChatListener.secret)) {
             NavigatorHelper.navigate(tabbedPane);
             logger.log("Unlocked mystery 3");
+            this.socketInstance.getBroadcastOperations().sendEvent("mystery2-unlocked", true);
         } else {
             logger.error("INCORRECT");
         }

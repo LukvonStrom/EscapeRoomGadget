@@ -4,7 +4,6 @@ import com.corundumstudio.socketio.Configuration;
 import com.corundumstudio.socketio.SocketIOServer;
 import de.dhbw.studium.listeners.networking.ChatListener;
 import de.dhbw.studium.listeners.networking.ConnectListener;
-import de.dhbw.studium.listeners.networking.PingListener;
 import de.dhbw.studium.log.ILog;
 
 public class SocketIO {
@@ -12,6 +11,10 @@ public class SocketIO {
     private SocketIOServer server;
     private ILog logger;
 
+
+    public SocketIOServer getServer() {
+        return server;
+    }
 
     public SocketIO(ILog logger) {
         this.logger = logger;
@@ -26,7 +29,6 @@ public class SocketIO {
 
         server.addEventListener("chat", String.class, new ChatListener(this.logger));
         server.addConnectListener(new ConnectListener(this.logger));
-        server.addPingListener(new PingListener(this.logger));
 
 
         start();

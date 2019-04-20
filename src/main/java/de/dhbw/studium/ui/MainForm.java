@@ -25,7 +25,6 @@ public class MainForm implements ILog {
 
     public MainForm() {
         textField1.addActionListener(new Mystery1Listener(this, textField1, tabbedPane1));
-        textField2.addActionListener(new Mystery2Listener(this, textField2, tabbedPane1));
         resetButton.addActionListener(new ResetListener(textField1, textField2, tabbedPane1, this, logArea));
         tabbedPane1.addChangeListener(new NavigationListener(tabbedPane1, textField1, textField2));
         ex2description.addMouseListener(new ClickDescription2Listener());
@@ -36,6 +35,7 @@ public class MainForm implements ILog {
         SocketToggleListener.setButtonState(socketInstance, startServerButton, stopServerButton);
         stopServerButton.addActionListener(new SocketToggleListener(startServerButton, stopServerButton, socketInstance));
         startServerButton.addActionListener(new SocketToggleListener(startServerButton, stopServerButton, socketInstance));
+        textField2.addActionListener(new Mystery2Listener(this, textField2, tabbedPane1, socketInstance.getServer()));
     }
 
     public void main(String[] args) {
