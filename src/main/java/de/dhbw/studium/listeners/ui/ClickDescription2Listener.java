@@ -10,12 +10,12 @@ import java.net.URISyntaxException;
 public class ClickDescription2Listener extends MouseAdapter {
     @Override
     public void mouseClicked(MouseEvent e) {
-        if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE)) {
+        /*if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE)) {
             try {
                 Desktop.getDesktop().browse(new URI("http://amritb.github.io/socketio-client-tool"));
             } catch (IOException | URISyntaxException e1) {
                 e1.printStackTrace();
             }
-        }
+        }*/
     }
 }

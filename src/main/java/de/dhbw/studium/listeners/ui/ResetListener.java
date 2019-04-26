@@ -31,6 +31,6 @@ public class ResetListener implements ActionListener {
         for (int i = 3; i < jTabbedPane.getTabCount(); i++) {
             jTabbedPane.setEnabledAt(i, false);
         }
-        logger.log("Application Reset!");
+        logger.success("Application Reset!");
     }
 }

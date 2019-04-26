@@ -29,6 +29,7 @@ public class Mystery2Listener implements ActionListener {
             return;
         }
         logger.log("Tried mystery 2 with answer: " + textField.getText());
+
         if (textField.getText().equals(ChatListener.secret)) {
             NavigatorHelper.navigate(tabbedPane);
             logger.log("Unlocked mystery 3");

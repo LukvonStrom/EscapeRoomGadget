@@ -25,9 +25,8 @@ public class SocketToggleListener implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-        System.out.println("SocketToggle Listener fired!" + socketInstance.isRunning);
         if (socketInstance.isRunning) {
-            socketInstance.stop();
+            System.exit(0);
             setButtonState(socketInstance, startServerButton, stopServerButton);
         } else {
             socketInstance.start();

@@ -5,6 +5,7 @@ import de.dhbw.studium.log.ILog;
 import de.dhbw.studium.websocket.SocketIO;
 
 import javax.swing.*;
+import java.awt.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -60,6 +61,17 @@ public class MainForm implements ILog {
 
     @Override
     public void error(String errorMessage) {
+        logArea.setBackground(Color.RED);
+        logArea.setForeground(Color.WHITE);
+        log(errorMessage);
+        logArea.setForeground(Color.BLACK);
+        logArea.setBackground(Color.WHITE);
         JOptionPane.showMessageDialog(tabbedPane1.getSelectedComponent(), errorMessage, "ERROR", JOptionPane.ERROR_MESSAGE);
+    }
+
+    @Override
+    public void success(String successMessage){
+        log(successMessage);
+        JOptionPane.showMessageDialog(tabbedPane1.getSelectedComponent(), successMessage, "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
     }
 }
