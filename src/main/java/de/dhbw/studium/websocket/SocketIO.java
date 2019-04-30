@@ -4,7 +4,9 @@ import com.corundumstudio.socketio.Configuration;
 import com.corundumstudio.socketio.SocketIOServer;
 import de.dhbw.studium.listeners.networking.ChatListener;
 import de.dhbw.studium.listeners.networking.ConnectListener;
+import de.dhbw.studium.listeners.networking.ImageMysteryListener;
 import de.dhbw.studium.log.ILog;
+import de.dhbw.studium.ui.MainForm;
 
 public class SocketIO {
     public boolean isRunning;
@@ -28,6 +30,7 @@ public class SocketIO {
         server = new SocketIOServer(config);
 
         server.addEventListener("chat", String.class, new ChatListener(this.logger));
+        server.addEventListener("image-binary", String.class, new ImageMysteryListener(this.logger, ((MainForm) this.logger).tabbedPane1));
         server.addConnectListener(new ConnectListener(this.logger));
 
 

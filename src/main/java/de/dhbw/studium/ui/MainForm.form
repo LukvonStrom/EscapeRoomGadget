@@ -205,48 +205,218 @@
               </vspacer>
             </children>
           </grid>
-          <grid id="5dc3" layout-manager="GridLayoutManager" row-count="3" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="34eb7" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
-              <tabbedpane title="Rätsel 3" enabled="false"/>
+              <tabbedpane title="Rätsel 3"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="4be27" class="javax.swing.JTextArea" binding="mystery3Description">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="50"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <text value="Bitte die  Webanwendung nutzen um das Ergebnis des&#10;Bilderrätsels in binärer Form einzugeben. &#10;(Schaltet hier automatisch nächstes Rätsel frei)"/>
+                </properties>
+              </component>
+              <vspacer id="b3b4b">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </vspacer>
+            </children>
+          </grid>
+          <grid id="5dc3" layout-manager="GridLayoutManager" row-count="23" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <tabbedpane title="Rätsel 4"/>
             </constraints>
             <properties>
               <enabled value="true"/>
             </properties>
             <border type="none"/>
             <children>
-              <vspacer id="d2cb5">
+              <hspacer id="f59f7">
+                <constraints>
+                  <grid row="0" column="2" row-span="13" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </hspacer>
+              <component id="e7570" class="javax.swing.JSlider" binding="yearSlider">
+                <constraints>
+                  <grid row="9" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <inverted value="false"/>
+                  <majorTickSpacing value="1"/>
+                  <maximum value="1985"/>
+                  <minimum value="1970"/>
+                  <paintLabels value="true"/>
+                  <paintTicks value="true"/>
+                  <snapToTicks value="true"/>
+                  <value value="1970"/>
+                </properties>
+              </component>
+              <component id="d1a1b" class="javax.swing.JTextField" binding="arbeitsgruppeTextField" default-binding="true">
+                <constraints>
+                  <grid row="12" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <foreground color="-4473925"/>
+                  <text value=""/>
+                  <toolTipText value="Arbeitsgruppe"/>
+                </properties>
+              </component>
+              <component id="f1dde" class="javax.swing.JTextArea" binding="descriptionMystery4Area">
+                <constraints>
+                  <grid row="0" column="1" row-span="2" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                    <preferred-size width="75" height="50"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <editable value="false"/>
+                  <text value="Wlan Standard Arbeitsgruppennummer, Monat &amp; Jahr der Verabschiedung"/>
+                </properties>
+              </component>
+              <vspacer id="f8f3c">
                 <constraints>
                   <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
                 </constraints>
               </vspacer>
-              <hspacer id="37047">
+              <vspacer id="44198">
                 <constraints>
-                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <grid row="22" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </vspacer>
+              <component id="593d8" class="javax.swing.JComboBox" binding="monthDropDown">
+                <constraints>
+                  <grid row="3" column="1" row-span="4" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <model>
+                    <item value="1"/>
+                    <item value="2"/>
+                    <item value="3"/>
+                    <item value="4"/>
+                    <item value="5"/>
+                    <item value="6"/>
+                    <item value="7"/>
+                    <item value="8"/>
+                    <item value="9"/>
+                    <item value="10"/>
+                    <item value="11"/>
+                    <item value="12"/>
+                  </model>
+                </properties>
+              </component>
+              <component id="74760" class="javax.swing.JButton" binding="submitMystery4Button">
+                <constraints>
+                  <grid row="14" column="1" row-span="8" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Submit"/>
+                </properties>
+              </component>
+              <hspacer id="a3507">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
               </hspacer>
-              <component id="5157d" class="javax.swing.JTextArea" binding="ex3Desc">
+              <component id="68622" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="13" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <horizontalAlignment value="2"/>
+                  <horizontalTextPosition value="2"/>
+                  <labelFor value="d1a1b"/>
+                  <text value="Arbeitsgruppen Nr. der IEEE "/>
+                  <verticalAlignment value="1"/>
+                  <verticalTextPosition value="1"/>
+                </properties>
+              </component>
+              <component id="f73a2" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <labelFor value="593d8"/>
+                  <text value="Monat der Verabschiedung des WLAN Standards"/>
+                </properties>
+              </component>
+              <component id="c6956" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="10" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Jahr der Verabschiedung des WLAN Standards"/>
+                </properties>
+              </component>
+              <component id="ac38b" class="javax.swing.JSeparator">
+                <constraints>
+                  <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="-1" height="20"/>
+                    <maximum-size width="-1" height="20"/>
+                  </grid>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="8d5b6" class="javax.swing.JSeparator">
+                <constraints>
+                  <grid row="11" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="-1" height="20"/>
+                    <maximum-size width="-1" height="20"/>
+                  </grid>
+                </constraints>
+                <properties/>
+              </component>
+            </children>
+          </grid>
+          <grid id="cc7b9" layout-manager="GridLayoutManager" row-count="3" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <tabbedpane title="Ende" enabled="false"/>
+            </constraints>
+            <properties>
+              <enabled value="true"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="c4c04" class="javax.swing.JTextArea" binding="finishTextArea">
                 <constraints>
                   <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="50"/>
                   </grid>
                 </constraints>
                 <properties>
-                  <editable value="false"/>
-                  <lineWrap value="true"/>
-                  <text value="Codewort: HI"/>
+                  <text value="Vielen Dank fürs Spielen!"/>
                 </properties>
               </component>
-              <vspacer id="1516f">
+              <vspacer id="c5587">
                 <constraints>
-                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
                 </constraints>
               </vspacer>
-              <hspacer id="c0b16">
+              <hspacer id="ac062">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </hspacer>
+              <hspacer id="e60da">
                 <constraints>
                   <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
               </hspacer>
+              <vspacer id="30aa3">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </vspacer>
             </children>
           </grid>
         </children>

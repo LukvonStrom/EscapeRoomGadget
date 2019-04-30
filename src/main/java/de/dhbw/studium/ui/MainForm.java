@@ -10,7 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class MainForm implements ILog {
-    private JTabbedPane tabbedPane1;
+    public JTabbedPane tabbedPane1;
     private JPanel panel1;
     private JTextArea logArea;
     private JButton startServerButton;
@@ -19,16 +19,24 @@ public class MainForm implements ILog {
     private JTextField textField2;
     private JTextArea ex2description;
     private JTextArea ex1Description;
-    private JTextArea ex3Desc;
     private JButton resetButton;
+    private JComboBox monthDropDown;
+    private JSlider yearSlider;
+    private JTextField arbeitsgruppeTextField;
+    private JButton submitMystery4Button;
+    private JTextArea descriptionMystery4Area;
+    private JTextArea finishTextArea;
+    private JTextArea mystery3Description;
     private SocketIO socketInstance;
     private SocketToggleListener socketToggleListener;
 
     public MainForm() {
         textField1.addActionListener(new Mystery1Listener(this, textField1, tabbedPane1));
-        resetButton.addActionListener(new ResetListener(textField1, textField2, tabbedPane1, this, logArea));
+        JComponent[] resettableComponents = {textField1, textField2, logArea, monthDropDown, yearSlider, arbeitsgruppeTextField};
+        resetButton.addActionListener(new ResetListener(tabbedPane1, this, resettableComponents));
         tabbedPane1.addChangeListener(new NavigationListener(tabbedPane1, textField1, textField2));
         ex2description.addMouseListener(new ClickDescription2Listener());
+        submitMystery4Button.addActionListener(new Mystery3Listener(yearSlider, arbeitsgruppeTextField, monthDropDown, this, tabbedPane1));
     }
 
     public void setSocketInstance(SocketIO socketInstance) {
@@ -70,7 +78,7 @@ public class MainForm implements ILog {
     }
 
     @Override
-    public void success(String successMessage){
+    public void success(String successMessage) {
         log(successMessage);
         JOptionPane.showMessageDialog(tabbedPane1.getSelectedComponent(), successMessage, "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
     }

@@ -3,28 +3,32 @@ package de.dhbw.studium.listeners.ui;
 import de.dhbw.studium.log.ILog;
 
 import javax.swing.*;
+import javax.swing.text.JTextComponent;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ResetListener implements ActionListener {
-    private JTextField textField1;
-    private JTextField textField2;
     private JTabbedPane jTabbedPane;
     private ILog logger;
-    private JTextArea logArea;
 
-    public ResetListener(JTextField textField1, JTextField textField2, JTabbedPane jTabbedPane, ILog logger, JTextArea logArea) {
-        this.textField1 = textField1;
-        this.textField2 = textField2;
+    private JComponent[] components;
+
+    public ResetListener(JTabbedPane jTabbedPane, ILog logger, JComponent[] components) {
         this.jTabbedPane = jTabbedPane;
         this.logger = logger;
-        this.logArea = logArea;
+        this.components = components;
     }
 
     public void actionPerformed(ActionEvent e) {
-        textField1.setText("");
-        textField2.setText("");
-        logArea.setText("");
+        for (JComponent component : components) {
+            if (component instanceof JTextComponent) {
+                ((JTextComponent) component).setText("");
+            } else if (component instanceof JSlider) {
+                ((JSlider) component).setValue(((JSlider) component).getMinimum());
+            } else if (component instanceof JComboBox) {
+                ((JComboBox) component).setSelectedIndex(0);
+            }
+        }
         jTabbedPane.setSelectedIndex(1);
         jTabbedPane.setEnabledAt(2, true);
 
