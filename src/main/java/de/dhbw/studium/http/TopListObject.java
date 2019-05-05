@@ -24,4 +24,8 @@ public class TopListObject {
     public String toString() {
         return groupName + ":" + duration / 1000 + "s \n";
     }
+
+    public String[] toArray() {
+        return new String[]{groupName, duration / 1000 + ""};
+    }
 }

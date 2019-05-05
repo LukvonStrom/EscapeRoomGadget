@@ -22,7 +22,7 @@ public class ImageMysteryListener implements DataListener<String> {
         this.logger.log("Received Image Solution: " + string);
         boolean solved = string.equals("110011110");
         socketIOClient.sendEvent("image-binary", solved);
-        if (solved && jTabbedPane.getSelectedIndex() == 4) NavigatorHelper.navigate(jTabbedPane);
+        if (solved) NavigatorHelper.navigate(jTabbedPane);
 
     }
 }

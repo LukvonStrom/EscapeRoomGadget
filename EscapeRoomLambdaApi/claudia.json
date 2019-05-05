@@ -7,5 +7,6 @@
   "api": {
     "id": "0mwzrjihzb",
     "module": "index"
-  }
+  },
+  "keep": true
 }

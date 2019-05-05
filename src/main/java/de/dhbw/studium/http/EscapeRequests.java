@@ -1,6 +1,7 @@
 package de.dhbw.studium.http;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import de.dhbw.studium.log.ILog;
 import okhttp3.*;
 
 import java.io.IOException;
@@ -10,6 +11,11 @@ public class EscapeRequests {
     ObjectMapper objectMapper = new ObjectMapper();
     private OkHttpClient client = new OkHttpClient();
     private String baseUri = "https://0mwzrjihzb.execute-api.eu-central-1.amazonaws.com/latest/escape";
+    private ILog logger;
+
+    public EscapeRequests(ILog logger) {
+        this.logger = logger;
+    }
 
     private RequestBody generateNameBody(String name) {
         String json = "{\"groupName\":\"" + name + "\"}";
@@ -26,7 +32,7 @@ public class EscapeRequests {
 
         Call call = this.client.newCall(request);
         Response response = call.execute();
-        System.out.println(response.code() + " " + response.body().string());
+        logger.log("Server answered " + response.code() + " " + response.body().string() + " while performing " + endpoint + " request.");
         return response.code() == 201;
     }
 

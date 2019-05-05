@@ -11,6 +11,7 @@ import java.awt.*;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Vector;
 
 public class MainForm implements ILog {
     public JTabbedPane tabbedPane1;
@@ -32,15 +33,16 @@ public class MainForm implements ILog {
     private JTextArea descriptionMystery4Area;
     private JTextArea topListArea;
     private JTextArea mystery3Description;
+    private JTable topListTable;
     private SocketIO socketInstance;
     private SocketToggleListener socketToggleListener;
-    private EscapeRequests escapeRequests = new EscapeRequests();
+    private EscapeRequests escapeRequests = new EscapeRequests(this);
 
     public MainForm() {
         textField1.addActionListener(new Mystery1Listener(this, textField1, tabbedPane1));
         JComponent[] resettableComponents = {textField1, textField2, logArea, monthDropDown, yearSlider, arbeitsgruppeTextField};
         resetButton.addActionListener(new ResetListener(tabbedPane1, this, resettableComponents));
-        tabbedPane1.addChangeListener(new NavigationListener(tabbedPane1, textField1, textField2, new TopListRefreshListener(topListArea, escapeRequests), groupNameField, escapeRequests));
+        tabbedPane1.addChangeListener(new NavigationListener(tabbedPane1, textField1, textField2, new TopListRefreshListener(topListArea, escapeRequests, topListTable), groupNameField, escapeRequests));
         ex2description.addMouseListener(new ClickDescription2Listener());
         submitMystery4Button.addActionListener(new Mystery3Listener(yearSlider, arbeitsgruppeTextField, monthDropDown, this, tabbedPane1));
         beginEscapeButton.addActionListener(e -> {
@@ -52,6 +54,7 @@ public class MainForm implements ILog {
                 e1.printStackTrace();
             }
         });
+
     }
 
     public void setSocketInstance(SocketIO socketInstance) {
@@ -96,5 +99,24 @@ public class MainForm implements ILog {
     public void success(String successMessage) {
         log(successMessage);
         JOptionPane.showMessageDialog(tabbedPane1.getSelectedComponent(), successMessage, "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    private void createUIComponents() {
+        Vector<String> columns = new Vector<String>();
+        columns.add("Gruppen Name");
+        columns.add("Zeit in Sekunden");
+        Vector<Vector<String>> data = new Vector<>();
+        Vector<String> innerVector = new Vector<String>();
+        innerVector.add("");
+        innerVector.add("");
+        data.add(innerVector);
+
+        topListTable = new JTable(data, columns) {
+            public boolean isCellEditable(int rowIndex, int colIndex) {
+                return false;
+            }
+        };
+
+
     }
 }

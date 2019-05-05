@@ -45,10 +45,12 @@ public class NavigationListener implements ChangeListener {
                 });
                 break;
             case 7:
-                try {
-                    escapeRequests.end(groupNameField.getText());
-                } catch (IOException e1) {
-                    e1.printStackTrace();
+                if (groupNameField.getText().length() > 0) {
+                    try {
+                        escapeRequests.end(groupNameField.getText());
+                    } catch (IOException e1) {
+                        e1.printStackTrace();
+                    }
                 }
                 topListRefreshTimer.setInitialDelay(0);
                 topListRefreshTimer.start();
