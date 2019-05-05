@@ -1,0 +1,11 @@
+{
+  "lambda": {
+    "role": "EscapeRoomLambdaApi-executor",
+    "name": "EscapeRoomLambdaApi",
+    "region": "eu-central-1"
+  },
+  "api": {
+    "id": "0mwzrjihzb",
+    "module": "index"
+  }
+}
