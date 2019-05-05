@@ -10,7 +10,6 @@ import java.awt.event.ActionListener;
 public class ResetListener implements ActionListener {
     private JTabbedPane jTabbedPane;
     private ILog logger;
-
     private JComponent[] components;
 
     public ResetListener(JTabbedPane jTabbedPane, ILog logger, JComponent[] components) {

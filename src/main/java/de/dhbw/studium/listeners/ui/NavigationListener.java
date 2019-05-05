@@ -1,41 +1,57 @@
 package de.dhbw.studium.listeners.ui;
 
+import de.dhbw.studium.http.EscapeRequests;
+
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.*;
+import java.io.IOException;
 
 public class NavigationListener implements ChangeListener {
     JTabbedPane tabbedPane1;
     JTextField textField1;
     JTextField textField2;
+    TopListRefreshListener topListRefreshListener;
+    JTextField groupNameField;
+    EscapeRequests escapeRequests;
+    Timer topListRefreshTimer;
 
-    public NavigationListener(JTabbedPane tabbedPane1, JTextField textField1, JTextField textField2) {
+    public NavigationListener(JTabbedPane tabbedPane1, JTextField textField1, JTextField textField2, TopListRefreshListener topListRefreshListener, JTextField groupNameField, EscapeRequests escapeRequests) {
         this.tabbedPane1 = tabbedPane1;
         this.textField1 = textField1;
         this.textField2 = textField2;
+        this.topListRefreshListener = topListRefreshListener;
+        this.groupNameField = groupNameField;
+        this.escapeRequests = escapeRequests;
+        this.topListRefreshTimer = new Timer(60000, topListRefreshListener);
     }
 
     public void stateChanged(ChangeEvent e) {
         int index = tabbedPane1.getSelectedIndex();
+        if (topListRefreshTimer.isRunning()) topListRefreshTimer.stop();
+        System.out.println("Navigated to index: " + index);
         switch (index) {
             case 2:
-                EventQueue.invokeLater(new Runnable() {
-                    public void run() {
-                        textField1.grabFocus();
-                        textField1.requestFocusInWindow();//or inWindow
-                    }
+                EventQueue.invokeLater(() -> {
+                    textField1.grabFocus();
+                    textField1.requestFocusInWindow();//or inWindow
                 });
                 break;
             case 3:
-                EventQueue.invokeLater(new Runnable() {
-                    public void run() {
-                        textField2.grabFocus();
-                        textField2.requestFocusInWindow();//or inWindow
-                    }
+                EventQueue.invokeLater(() -> {
+                    textField2.grabFocus();
+                    textField2.requestFocusInWindow();//or inWindow
                 });
                 break;
-            case 4:
+            case 7:
+                try {
+                    escapeRequests.end(groupNameField.getText());
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
+                topListRefreshTimer.setInitialDelay(0);
+                topListRefreshTimer.start();
                 break;
         }
     }

@@ -1,11 +1,14 @@
 package de.dhbw.studium.ui;
 
+import de.dhbw.studium.http.EscapeRequests;
+import de.dhbw.studium.listeners.NavigatorHelper;
 import de.dhbw.studium.listeners.ui.*;
 import de.dhbw.studium.log.ILog;
 import de.dhbw.studium.websocket.SocketIO;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -24,19 +27,31 @@ public class MainForm implements ILog {
     private JSlider yearSlider;
     private JTextField arbeitsgruppeTextField;
     private JButton submitMystery4Button;
+    private JButton beginEscapeButton;
+    private JTextField groupNameField;
     private JTextArea descriptionMystery4Area;
-    private JTextArea finishTextArea;
+    private JTextArea topListArea;
     private JTextArea mystery3Description;
     private SocketIO socketInstance;
     private SocketToggleListener socketToggleListener;
+    private EscapeRequests escapeRequests = new EscapeRequests();
 
     public MainForm() {
         textField1.addActionListener(new Mystery1Listener(this, textField1, tabbedPane1));
         JComponent[] resettableComponents = {textField1, textField2, logArea, monthDropDown, yearSlider, arbeitsgruppeTextField};
         resetButton.addActionListener(new ResetListener(tabbedPane1, this, resettableComponents));
-        tabbedPane1.addChangeListener(new NavigationListener(tabbedPane1, textField1, textField2));
+        tabbedPane1.addChangeListener(new NavigationListener(tabbedPane1, textField1, textField2, new TopListRefreshListener(topListArea, escapeRequests), groupNameField, escapeRequests));
         ex2description.addMouseListener(new ClickDescription2Listener());
         submitMystery4Button.addActionListener(new Mystery3Listener(yearSlider, arbeitsgruppeTextField, monthDropDown, this, tabbedPane1));
+        beginEscapeButton.addActionListener(e -> {
+            System.out.println("Pressed the button," + groupNameField.getText());
+            try {
+                escapeRequests.start(groupNameField.getText());
+                NavigatorHelper.navigate(tabbedPane1);
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        });
     }
 
     public void setSocketInstance(SocketIO socketInstance) {

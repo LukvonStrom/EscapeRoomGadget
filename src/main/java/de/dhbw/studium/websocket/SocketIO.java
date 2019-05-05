@@ -14,12 +14,12 @@ public class SocketIO {
     private ILog logger;
 
 
-    public SocketIOServer getServer() {
-        return server;
-    }
-
     public SocketIO(ILog logger) {
         this.logger = logger;
+    }
+
+    public SocketIOServer getServer() {
+        return server;
     }
 
     public void init() {

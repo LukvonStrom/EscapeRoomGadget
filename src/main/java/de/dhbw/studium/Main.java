@@ -11,7 +11,7 @@ public class Main {
             SocketIO socketInstance = new SocketIO(logger);
             socketInstance.init();
             logger.setSocketInstance(socketInstance);
-        }catch(Exception ex){
+        } catch (Exception ex) {
             logger.error(ex.getMessage());
         }
     }
