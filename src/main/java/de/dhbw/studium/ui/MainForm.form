@@ -216,7 +216,7 @@
                 <properties>
                   <editable value="false"/>
                   <lineWrap value="true"/>
-                  <text value="In dieser Aufgabe sollt ihr den Webclient benutzen welchen ihr via NFC aufrufen könnt.&#10;&#10;Bitte benutzt den Chat um eine Nachricht an den Server zu senden, der Server wird mit einer einzigartigen Chiffre antworten, die ihr hier eingeben sollt.&#10;&#10;Websocket Server läuft auf Port (1136,5*8)"/>
+                  <text value="In dieser Aufgabe sollt ihr den Webclient benutzen. Ruft ihn via NFC auf.&#10;&#10;Bitte benutzt den Chat um eine Nachricht an den Server zu senden.&#10;&#10;Der Server wird mit einer einzigartigen Chiffre antworten.&#10;Gebt diese hier ein.&#10;&#10;Der Websocket Server läuft auf Port (1136,5*8)"/>
                 </properties>
               </component>
               <vspacer id="3ab68">
@@ -449,7 +449,7 @@
                   <component id="d2b25" class="javax.swing.JTable" binding="topListTable" custom-create="true">
                     <constraints/>
                     <properties>
-                      <autoCreateRowSorter value="true"/>
+                      <autoCreateRowSorter value="false"/>
                       <fillsViewportHeight value="false"/>
                       <showVerticalLines value="true"/>
                     </properties>

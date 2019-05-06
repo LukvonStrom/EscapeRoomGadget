@@ -9,13 +9,13 @@ import java.awt.*;
 import java.io.IOException;
 
 public class NavigationListener implements ChangeListener {
-    JTabbedPane tabbedPane1;
-    JTextField textField1;
-    JTextField textField2;
-    TopListRefreshListener topListRefreshListener;
-    JTextField groupNameField;
-    EscapeRequests escapeRequests;
-    Timer topListRefreshTimer;
+    private JTabbedPane tabbedPane1;
+    private JTextField textField1;
+    private JTextField textField2;
+    private TopListRefreshListener topListRefreshListener;
+    private JTextField groupNameField;
+    private EscapeRequests escapeRequests;
+    private Timer topListRefreshTimer;
 
     public NavigationListener(JTabbedPane tabbedPane1, JTextField textField1, JTextField textField2, TopListRefreshListener topListRefreshListener, JTextField groupNameField, EscapeRequests escapeRequests) {
         this.tabbedPane1 = tabbedPane1;
@@ -32,13 +32,13 @@ public class NavigationListener implements ChangeListener {
         if (topListRefreshTimer.isRunning()) topListRefreshTimer.stop();
         System.out.println("Navigated to index: " + index);
         switch (index) {
-            case 2:
+            case 3:
                 EventQueue.invokeLater(() -> {
                     textField1.grabFocus();
                     textField1.requestFocusInWindow();//or inWindow
                 });
                 break;
-            case 3:
+            case 4:
                 EventQueue.invokeLater(() -> {
                     textField2.grabFocus();
                     textField2.requestFocusInWindow();//or inWindow

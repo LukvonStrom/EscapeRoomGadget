@@ -8,11 +8,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Mystery3Listener implements ActionListener {
-    JSlider yearSlider;
-    JTextField arbeitsGruppeTextField;
-    JComboBox monthDropDown;
-    ILog logger;
-    JTabbedPane tabbedPane;
+    private JSlider yearSlider;
+    private JTextField arbeitsGruppeTextField;
+    private JComboBox monthDropDown;
+    private ILog logger;
+    private JTabbedPane tabbedPane;
 
     public Mystery3Listener(JSlider yearSlider, JTextField arbeitsGruppeTextField, JComboBox monthDropDown, ILog logger, JTabbedPane tabbedPane) {
         this.yearSlider = yearSlider;

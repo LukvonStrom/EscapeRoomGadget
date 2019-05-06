@@ -10,9 +10,9 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 
 public class TopListRefreshListener implements ActionListener {
-    JTextArea topListArea;
-    EscapeRequests escapeRequests;
-    JTable table;
+    private JTextArea topListArea;
+    private EscapeRequests escapeRequests;
+    private JTable table;
 
     public TopListRefreshListener(JTextArea topListArea, EscapeRequests escapeRequests, JTable table) {
         this.topListArea = topListArea;
@@ -25,12 +25,7 @@ public class TopListRefreshListener implements ActionListener {
         DefaultTableModel model = (DefaultTableModel) table.getModel();
         model.setRowCount(0);
         System.out.println("Called Refresh Listener");
-//        StringBuilder stringBuilder = new StringBuilder();
         try {
-            /*for (TopListObject topListObject : this.escapeRequests.getTop()) {
-                stringBuilder.append(topListObject.toString());
-            }*/
-
             for (TopListObject topListObject : this.escapeRequests.getTop()) {
                 model.addRow(topListObject.toArray());
             }
@@ -38,6 +33,5 @@ public class TopListRefreshListener implements ActionListener {
         } catch (IOException e1) {
             e1.printStackTrace();
         }
-//        this.topListArea.setText(stringBuilder.toString());
     }
 }

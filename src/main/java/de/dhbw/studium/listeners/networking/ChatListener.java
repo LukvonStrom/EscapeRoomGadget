@@ -11,7 +11,7 @@ import java.util.Random;
 
 public class ChatListener implements DataListener<String> {
     public static String secret;
-    ILog logger;
+    private ILog logger;
 
     public ChatListener(ILog logger) {
         this.logger = logger;

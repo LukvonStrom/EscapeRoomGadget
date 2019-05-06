@@ -8,9 +8,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Mystery1Listener implements ActionListener {
-    ILog logger;
-    JTextField textField1;
-    JTabbedPane tabbedPane1;
+    private ILog logger;
+    private JTextField textField1;
+    private JTabbedPane tabbedPane1;
 
     public Mystery1Listener(ILog logger, final JTextField textField1, JTabbedPane tabbedPane1) {
         this.logger = logger;

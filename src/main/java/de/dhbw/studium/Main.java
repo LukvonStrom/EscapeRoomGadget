@@ -5,14 +5,14 @@ import de.dhbw.studium.websocket.SocketIO;
 
 public class Main {
     public static void main(String[] args) {
-        MainForm logger = new MainForm();
-        logger.main(args);
+        MainForm ui = new MainForm();
+        ui.main(args);
         try {
-            SocketIO socketInstance = new SocketIO(logger);
+            SocketIO socketInstance = new SocketIO(ui);
             socketInstance.init();
-            logger.setSocketInstance(socketInstance);
+            ui.setSocketInstance(socketInstance);
         } catch (Exception ex) {
-            logger.error(ex.getMessage());
+            ui.error(ex.getMessage());
         }
     }
 }

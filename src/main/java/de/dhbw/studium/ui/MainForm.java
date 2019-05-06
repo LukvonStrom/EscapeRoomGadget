@@ -37,20 +37,17 @@ public class MainForm implements ILog {
     private JTextArea topListArea;
     private JTextArea mystery3Description;
     private JTable topListTable;
-    private SocketIO socketInstance;
-    private SocketToggleListener socketToggleListener;
     private EscapeRequests escapeRequests = new EscapeRequests(this);
 
     public MainForm() {
         $$$setupUI$$$();
         textField1.addActionListener(new Mystery1Listener(this, textField1, tabbedPane1));
-        JComponent[] resettableComponents = {textField1, textField2, logArea, monthDropDown, yearSlider, arbeitsgruppeTextField};
+        JComponent[] resettableComponents = {textField1, textField2, logArea, monthDropDown, yearSlider, arbeitsgruppeTextField, groupNameField};
         resetButton.addActionListener(new ResetListener(tabbedPane1, this, resettableComponents));
         tabbedPane1.addChangeListener(new NavigationListener(tabbedPane1, textField1, textField2, new TopListRefreshListener(topListArea, escapeRequests, topListTable), groupNameField, escapeRequests));
-        ex2description.addMouseListener(new ClickDescription2Listener());
         submitMystery4Button.addActionListener(new Mystery3Listener(yearSlider, arbeitsgruppeTextField, monthDropDown, this, tabbedPane1));
         beginEscapeButton.addActionListener(e -> {
-            System.out.println("Pressed the button," + groupNameField.getText());
+            System.out.println("Pressed the Begin Button," + groupNameField.getText());
             try {
                 escapeRequests.start(groupNameField.getText());
                 NavigatorHelper.navigate(tabbedPane1);
@@ -62,16 +59,12 @@ public class MainForm implements ILog {
     }
 
     public void setSocketInstance(SocketIO socketInstance) {
-        this.socketInstance = socketInstance;
-        SocketToggleListener.setButtonState(socketInstance, startServerButton, stopServerButton);
-        stopServerButton.addActionListener(new SocketToggleListener(startServerButton, stopServerButton, socketInstance));
-        startServerButton.addActionListener(new SocketToggleListener(startServerButton, stopServerButton, socketInstance));
         textField2.addActionListener(new Mystery2Listener(this, textField2, tabbedPane1, socketInstance.getServer()));
     }
 
     public void main(String[] args) {
         try {
-            JFrame frame = new JFrame("Escape Room Gadget");
+            JFrame frame = new JFrame("Escape Room Desktop");
             frame.setContentPane(panel1);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.pack();
@@ -106,11 +99,11 @@ public class MainForm implements ILog {
     }
 
     private void createUIComponents() {
-        Vector<String> columns = new Vector<String>();
+        Vector<String> columns = new Vector<>();
         columns.add("Gruppen Name");
         columns.add("Zeit in Sekunden");
         Vector<Vector<String>> data = new Vector<>();
-        Vector<String> innerVector = new Vector<String>();
+        Vector<String> innerVector = new Vector<>();
         innerVector.add("");
         innerVector.add("");
         data.add(innerVector);

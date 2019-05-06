@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class EscapeRequests {
-    ObjectMapper objectMapper = new ObjectMapper();
+    private ObjectMapper objectMapper = new ObjectMapper();
     private OkHttpClient client = new OkHttpClient();
     private String baseUri = "https://0mwzrjihzb.execute-api.eu-central-1.amazonaws.com/latest/escape";
     private ILog logger;

@@ -10,10 +10,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Mystery2Listener implements ActionListener {
-    ILog logger;
-    JTextField textField;
-    JTabbedPane tabbedPane;
-    SocketIOServer socketInstance;
+    private ILog logger;
+    private JTextField textField;
+    private JTabbedPane tabbedPane;
+    private SocketIOServer socketInstance;
 
     public Mystery2Listener(ILog logger, JTextField textField, JTabbedPane tabbedPane, SocketIOServer socketInstance) {
         this.logger = logger;

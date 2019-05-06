@@ -9,8 +9,8 @@ import de.dhbw.studium.log.ILog;
 import javax.swing.*;
 
 public class ImageMysteryListener implements DataListener<String> {
-    ILog logger;
-    JTabbedPane jTabbedPane;
+    private ILog logger;
+    private JTabbedPane jTabbedPane;
 
     public ImageMysteryListener(ILog logger, JTabbedPane jTabbedPane) {
         this.logger = logger;

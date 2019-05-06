@@ -4,7 +4,7 @@ import com.corundumstudio.socketio.SocketIOClient;
 import de.dhbw.studium.log.ILog;
 
 public class ConnectListener implements com.corundumstudio.socketio.listener.ConnectListener {
-    ILog logger;
+    private ILog logger;
 
     public ConnectListener(ILog logger) {
         this.logger = logger;
