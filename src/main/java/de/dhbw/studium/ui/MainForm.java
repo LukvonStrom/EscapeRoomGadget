@@ -191,7 +191,7 @@ public class MainForm implements ILog {
         panel5.add(textField1, new GridConstraints(2, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         ex1Description = new JTextArea();
         ex1Description.setEditable(false);
-        ex1Description.setText("Intel, Raspberry, Ubiquiti in Dezimalen");
+        ex1Description.setText("Als erste Aufgabe soll bitte die Hexadezimalzahl 235FB in das 7er System umgerechnet werden.");
         panel5.add(ex1Description, new GridConstraints(1, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, 50), null, 0, false));
         final Spacer spacer9 = new Spacer();
         panel5.add(spacer9, new GridConstraints(1, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
@@ -210,7 +210,7 @@ public class MainForm implements ILog {
         ex2description = new JTextArea();
         ex2description.setEditable(false);
         ex2description.setLineWrap(true);
-        ex2description.setText("Websocket Chat Event.\nEs empfiehlt sich den Webclient zu benutzen.\n\nWebsocket Server läuft auf Port (1136,5*8)");
+        ex2description.setText("In dieser Aufgabe sollt ihr den Webclient benutzen welchen ihr via NFC aufrufen könnt.\n\nBitte benutzt den Chat um eine Nachricht an den Server zu senden, der Server wird mit einer einzigartigen Chiffre antworten, die ihr hier eingeben sollt.\n\nWebsocket Server läuft auf Port (1136,5*8)");
         panel6.add(ex2description, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(1199, 50), null, 0, false));
         final Spacer spacer12 = new Spacer();
         panel6.add(spacer12, new GridConstraints(3, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_VERTICAL, 1, GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
@@ -324,4 +324,5 @@ public class MainForm implements ILog {
     public JComponent $$$getRootComponent$$$() {
         return panel1;
     }
+
 }

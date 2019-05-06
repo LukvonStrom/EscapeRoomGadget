@@ -22,7 +22,7 @@ public class Mystery1Listener implements ActionListener {
         System.out.println("Mistery1 Listener fired!");
         System.out.println(textField1.getText());
         logger.log("Tried mystery 1 with answer: " + textField1.getText());
-        if (textField1.getText().equals("1234567890")) {
+        if (textField1.getText().equals("1142265")) {
             NavigatorHelper.navigate(tabbedPane1);
             logger.log("Unlocked mystery 2");
         } else {

@@ -24,7 +24,6 @@ public class SocketIO {
 
     public void init() {
         Configuration config = new Configuration();
-        config.setHostname("localhost");
         config.setPort(9092);
 
         server = new SocketIOServer(config);

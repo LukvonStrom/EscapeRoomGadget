@@ -167,7 +167,7 @@
                 </constraints>
                 <properties>
                   <editable value="false"/>
-                  <text value="Intel, Raspberry, Ubiquiti in Dezimalen"/>
+                  <text value="Als erste Aufgabe soll bitte die Hexadezimalzahl 235FB in das 7er System umgerechnet werden."/>
                 </properties>
               </component>
               <hspacer id="3d771">
@@ -216,7 +216,7 @@
                 <properties>
                   <editable value="false"/>
                   <lineWrap value="true"/>
-                  <text value="Websocket Chat Event.&#10;Es empfiehlt sich den Webclient zu benutzen.&#10;&#10;Websocket Server läuft auf Port (1136,5*8)"/>
+                  <text value="In dieser Aufgabe sollt ihr den Webclient benutzen welchen ihr via NFC aufrufen könnt.&#10;&#10;Bitte benutzt den Chat um eine Nachricht an den Server zu senden, der Server wird mit einer einzigartigen Chiffre antworten, die ihr hier eingeben sollt.&#10;&#10;Websocket Server läuft auf Port (1136,5*8)"/>
                 </properties>
               </component>
               <vspacer id="3ab68">
