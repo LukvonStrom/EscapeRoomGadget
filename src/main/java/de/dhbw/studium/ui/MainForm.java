@@ -203,7 +203,7 @@ public class MainForm implements ILog {
         ex2description = new JTextArea();
         ex2description.setEditable(false);
         ex2description.setLineWrap(true);
-        ex2description.setText("In dieser Aufgabe sollt ihr den Webclient benutzen welchen ihr via NFC aufrufen könnt.\n\nBitte benutzt den Chat um eine Nachricht an den Server zu senden, der Server wird mit einer einzigartigen Chiffre antworten, die ihr hier eingeben sollt.\n\nWebsocket Server läuft auf Port (1136,5*8)");
+        ex2description.setText("In dieser Aufgabe sollt ihr den Webclient benutzen. Ruft ihn via NFC auf.\n\nBitte benutzt den Chat um eine Nachricht an den Server zu senden.\n\nDer Server wird mit einer einzigartigen Chiffre antworten.\nGebt diese hier ein.\n\nDer Websocket Server läuft auf Port (1136,5*8)");
         panel6.add(ex2description, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(1199, 50), null, 0, false));
         final Spacer spacer12 = new Spacer();
         panel6.add(spacer12, new GridConstraints(3, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_VERTICAL, 1, GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
@@ -303,7 +303,7 @@ public class MainForm implements ILog {
         panel9.add(spacer21, new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_VERTICAL, 1, GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
         final JScrollPane scrollPane1 = new JScrollPane();
         panel9.add(scrollPane1, new GridConstraints(2, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
-        topListTable.setAutoCreateRowSorter(true);
+        topListTable.setAutoCreateRowSorter(false);
         topListTable.setFillsViewportHeight(false);
         topListTable.setShowVerticalLines(true);
         scrollPane1.setViewportView(topListTable);
