@@ -12,6 +12,6 @@ public class ConnectListener implements com.corundumstudio.socketio.listener.Con
 
     @Override
     public void onConnect(SocketIOClient socketIOClient) {
-        this.logger.log("Connection " + socketIOClient.getRemoteAddress());
+        this.logger.log("Verbindung von IP: " + socketIOClient.getRemoteAddress());
     }
 }

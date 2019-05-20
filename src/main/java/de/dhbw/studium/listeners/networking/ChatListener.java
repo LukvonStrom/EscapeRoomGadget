@@ -19,12 +19,12 @@ public class ChatListener implements DataListener<String> {
 
     @Override
     public void onData(SocketIOClient socketIOClient, String str, AckRequest ackRequest) throws InterruptedException {
-        this.logger.log("Received Chat: " + str);
+        this.logger.log("Chatnachricht empfangen: " + str);
         ChatObject s = new ChatObject(socketIOClient.getSessionId().toString().substring(0, 4), str, RandomStringUtils.randomAlphanumeric(5));
         ChatListener.secret = s.getSalted();
         int delay = (new Random()).ints(1000, (5000 + 1)).findFirst().getAsInt();
         Thread.sleep(delay);
-        this.logger.log("Sent answer after " + delay + " ms");
+        this.logger.log("Antwort nach " + delay + " ms gesendet.");
         socketIOClient.sendEvent("chat", ChatListener.secret);
 
     }

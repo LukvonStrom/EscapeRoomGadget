@@ -27,10 +27,10 @@ public class Mystery3Listener implements ActionListener {
 
         if (yearSlider.getValue() == 1980 && arbeitsGruppeTextField.getText().equals("11") && monthDropDown.getSelectedIndex() == 1) {
             NavigatorHelper.navigate(tabbedPane);
-            logger.success("Correct!");
-            logger.log("Finished mystery 3");
+            logger.success("Richtig!");
+            logger.log("Rätsel 3 abgeschlossen.");
         } else {
-            logger.error("Incorrect!");
+            logger.error("Falsche Eingabe!");
         }
     }
 }

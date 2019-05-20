@@ -32,7 +32,7 @@ public class EscapeRequests {
 
         Call call = this.client.newCall(request);
         Response response = call.execute();
-        logger.log("Server answered " + response.code() + " " + response.body().string() + " while performing " + endpoint + " request.");
+        logger.log("HTTP Antwort vom Server mit " + response.code() + " " + response.body().string() + " bei " + endpoint + " Anfrage.");
         return response.code() == 201;
     }
 

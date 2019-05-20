@@ -19,14 +19,12 @@ public class Mystery1Listener implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-        System.out.println("Mistery1 Listener fired!");
-        System.out.println(textField1.getText());
-        logger.log("Tried mystery 1 with answer: " + textField1.getText());
+        logger.log("Rätsel 1 wurde mit folgender Lösung versucht: " + textField1.getText());
         if (textField1.getText().equals("1142265")) {
             NavigatorHelper.navigate(tabbedPane1);
-            logger.log("Unlocked mystery 2");
+            logger.log("Rätsel 2 freigeschalten");
         } else {
-            logger.error("Incorrect");
+            logger.error("Falsche Eingabe!");
         }
     }
 

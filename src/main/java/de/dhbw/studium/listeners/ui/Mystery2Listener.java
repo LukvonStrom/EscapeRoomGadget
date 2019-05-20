@@ -23,19 +23,18 @@ public class Mystery2Listener implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-        System.out.println("Mistery 2 Listener fired!");
         if (ChatListener.secret == null || ChatListener.secret.isEmpty()) {
-            logger.error("Socket Message not received yet, therefore no secret was computed.");
+            logger.error("Über den Socket wurde noch keine Nachricht empfangen, deshalb kann das hier noch gar nicht gelöst werden!");
             return;
         }
-        logger.log("Tried mystery 2 with answer: " + textField.getText());
+        logger.log("Rätsel 2 wurde mit folgender Lösung versucht: " + textField.getText());
 
         if (textField.getText().equals(ChatListener.secret)) {
             NavigatorHelper.navigate(tabbedPane);
             logger.log("Unlocked mystery 3");
             this.socketInstance.getBroadcastOperations().sendEvent("mystery2-unlocked", true);
         } else {
-            logger.error("INCORRECT");
+            logger.error("Falsche Eingabe!");
         }
     }
 }

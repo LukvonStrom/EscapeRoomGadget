@@ -30,7 +30,7 @@ public class NavigationListener implements ChangeListener {
     public void stateChanged(ChangeEvent e) {
         int index = tabbedPane1.getSelectedIndex();
         if (topListRefreshTimer.isRunning()) topListRefreshTimer.stop();
-        System.out.println("Navigated to index: " + index);
+        System.out.println("Navigiert zu Seite Nr." + index);
         switch (index) {
             case 3:
                 EventQueue.invokeLater(() -> {
