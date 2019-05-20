@@ -246,7 +246,7 @@
                   </grid>
                 </constraints>
                 <properties>
-                  <text value="Bitte die  Webanwendung nutzen um das Ergebnis des&#10;Bilderrätsels in binärer Form einzugeben. &#10;(Schaltet hier automatisch nächstes Rätsel frei)"/>
+                  <text value="Bitte die  Webanwendung nutzen um das Ergebnis des&#10;Bilderrätsels dort einzugeben.&#10;(Schaltet hier automatisch nächstes Rätsel frei)"/>
                 </properties>
               </component>
               <vspacer id="b3b4b">

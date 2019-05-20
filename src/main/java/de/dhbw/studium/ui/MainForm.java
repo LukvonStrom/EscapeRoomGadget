@@ -214,7 +214,7 @@ public class MainForm implements ILog {
         tabbedPane1.addTab("Rätsel 3", panel7);
         tabbedPane1.setEnabledAt(5, false);
         mystery3Description = new JTextArea();
-        mystery3Description.setText("Bitte die  Webanwendung nutzen um das Ergebnis des\nBilderrätsels in binärer Form einzugeben. \n(Schaltet hier automatisch nächstes Rätsel frei)");
+        mystery3Description.setText("Bitte die  Webanwendung nutzen um das Ergebnis des\nBilderrätsels dort einzugeben.\n(Schaltet hier automatisch nächstes Rätsel frei)");
         panel7.add(mystery3Description, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, 50), null, 0, false));
         final Spacer spacer14 = new Spacer();
         panel7.add(spacer14, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_VERTICAL, 1, GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));

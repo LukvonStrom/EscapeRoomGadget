@@ -20,7 +20,7 @@ public class ImageMysteryListener implements DataListener<String> {
     @Override
     public void onData(SocketIOClient socketIOClient, String string, AckRequest ackRequest) throws Exception {
         this.logger.log("Bilderrätsel wurde mit folgender Lösung probiert: " + string);
-        boolean solved = string.equals("1000000100100");
+        boolean solved = string.equals("4132");
         socketIOClient.sendEvent("image-binary", solved);
         if (solved) NavigatorHelper.navigate(jTabbedPane);
 
