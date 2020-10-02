@@ -37,7 +37,7 @@ public class MainForm implements ILog {
     private JTextArea topListArea;
     private JTextArea mystery3Description;
     private JTable topListTable;
-    private EscapeRequests escapeRequests = new EscapeRequests(this);
+    private EscapeRequests escapeRequests = new EscapeRequests(this, "https://0mwzrjihzb.execute-api.eu-central-1.amazonaws.com/latest/escape");
 
     public MainForm() {
         $$$setupUI$$$();
