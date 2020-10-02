@@ -7,21 +7,27 @@ import okhttp3.*;
 import java.io.IOException;
 import java.util.Objects;
 
+class GroupDto{
+    public String groupName;
+}
+
 public class EscapeRequests {
     private ObjectMapper objectMapper = new ObjectMapper();
     private OkHttpClient client = new OkHttpClient();
-    private String baseUri = "https://0mwzrjihzb.execute-api.eu-central-1.amazonaws.com/latest/escape";
+    private ObjectMapper mapper = new ObjectMapper();
     private ILog logger;
 
-    public EscapeRequests(ILog logger) {
+    public EscapeRequests(ILog logger, String apiUrl) {
         this.logger = logger;
+        this.baseUri = apiUrl;
     }
 
     private RequestBody generateNameBody(String name) {
-        String json = "{\"groupName\":\"" + name + "\"}";
+        GroupDto group = new GroupDto();
+        group.groupName = name;
 
-        return RequestBody.create(
-                MediaType.parse("application/json; charset=utf-8"), json);
+
+        return RequestBody.create(MediaType.parse("application/json; charset=utf-8"), mapper.writeValueAsString(group));
     }
 
     private boolean doRequest(String name, String endpoint) throws IOException {
